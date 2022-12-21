@@ -1,6 +1,6 @@
 from playwright.sync_api import Playwright, sync_playwright,expect
 import pytest
-
+from home_page_elements import Homepage
 
 def test_run(playwright: Playwright) -> None:
     #Assess/Given
@@ -15,4 +15,5 @@ def test_run(playwright: Playwright) -> None:
     page.set_default_timeout(10000)
 
     #Assert/Then
-    expect(page.locator("#widget-navbar-217841 > ul > li:nth-child(2) > a > div.info > span")).to_have_text("Cameras")
+    home_page = Homepage(page)
+    expect(home_page.camera_locator).to_have_text("Cameras")
