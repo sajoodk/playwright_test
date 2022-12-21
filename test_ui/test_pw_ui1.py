@@ -1,6 +1,5 @@
-from playwright.sync_api import Playwright, sync_playwright,expect
-import pytest
-from home_page_elements import Homepage
+from playwright.sync_api import Playwright, expect
+from pom.home_page_elements import Homepage
 
 def test_run(playwright: Playwright) -> None:
     #Assess/Given
