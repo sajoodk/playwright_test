@@ -7,10 +7,10 @@ def test_login(playwright: Playwright) -> None:
     context = browser.new_context()
     page = context.new_page()
 
-    page.goto('https://www.uitestingplayground.com/sampleapp')
+    page.goto('http://www.uitestingplayground.com/sampleapp')
     page.locator('//input[@placeholder="User Name"]').fill('Test')
     page.locator('//input[@name="Password"]').fill('pwd')
     page.locator('#login').click()
     #Assert
-    assert page.inner_text('#loginstatus') == 'Welcome, Test'
+    assert page.inner_text('#loginstatus') == 'Welcome, Test!'
 
