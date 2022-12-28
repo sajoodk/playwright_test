@@ -12,5 +12,5 @@ def test_login(playwright: Playwright) -> None:
     page.locator('//input[@name="Password"]').fill('pwd')
     page.locator('#login').click()
     #Assert
-    assert page.inner_text('#loginstatus') == 'Welcome, Test!!'
+    assert page.inner_text('#loginstatus') == 'Welcome, Test!'
 
